@@ -1,15 +1,17 @@
 import { Button, Form } from "react-bootstrap";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { auth } from "@/services/firebase.config";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useRouter } from "next/router";
 import { isEmail, validatePassword } from "@/hooks/validationHooks";
+import { UserContext } from "@/context/userContext";
 
 const SignIn = () => {
   const [validated, setValidated] = useState(false);
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();
+  const {setIsLoggedIn} = useContext(UserContext);
 
   const handleUserName = (e) => {
     e.preventDefault();
@@ -32,6 +34,7 @@ const SignIn = () => {
         const isEmailValid = isEmail(userName);
         const isPasswordValid = validatePassword(password);
         if (user && isEmailValid && isPasswordValid) {
+          setIsLoggedIn(true);
           router.push("/");
         }
       })
