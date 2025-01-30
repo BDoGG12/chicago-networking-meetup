@@ -5,10 +5,10 @@ import { UserProvider } from "@/context/userContext";
 
 export default function App({ Component, pageProps }) {
   return (
-    <NavigationMenu>
-      <UserProvider>
+    <UserProvider>
+      <NavigationMenu>
         <Component {...pageProps} />
-      </UserProvider>
-    </NavigationMenu>
+      </NavigationMenu>
+    </UserProvider>
   );
 }
