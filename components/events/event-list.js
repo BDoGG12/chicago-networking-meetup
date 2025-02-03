@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import EventItem from "@/components/events/event-item";
+import classes from "@/components/events/event-list.module.css";
 
 const EventList = ({ events }) => {
   return (
-    <Row xs={1} md={2} className="g-4">
+    <Row className={classes.eventList} xs={1} md={2}>
       {Array.from({ length: events.length }).map((_, idx) => (
         <Col key={idx}>
           <EventItem
