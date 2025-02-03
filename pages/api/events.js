@@ -13,7 +13,7 @@ const handler = async (req, res) => {
             params: {
                 engine: 'google_events',
                 q: query,
-                api_key: process.env.private_api_key
+                api_key: process.env.SERP_API_KEY
             },
         });
         res.status(200).json(response.data);
