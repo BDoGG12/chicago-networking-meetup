@@ -26,7 +26,7 @@ export async function getServerSideProps() {
             params: {
               engine: "google_events",
               q: 'Networking events in Chicago',
-              api_key: '9013f893afc2a6606be7ceddcac3cbfd74e5995c52250725091ac3c12d630375',
+              api_key: process.env.SERP_API_KEY,
             },
           });
           const {data} = response;
