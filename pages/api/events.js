@@ -12,12 +12,14 @@ const handler = async (req, res) => {
         const response = await axios.get('https://serpapi.com/search', {
             params: {
                 engine: 'google_events',
-                q: 'Networking Events in Chicago',
-                api_key: process.env.private_api_key
+                q: query,
+                api_key: process.env.SERP_API_KEY
             },
         });
         res.status(200).json(response.data);
     } catch (error) {
         res.status(500).json({error: error.message});
     }
-}
+};
+
+export default handler;

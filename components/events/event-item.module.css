@@ -1,0 +1,10 @@
+.cardImage {
+    width: '50vw';
+    height: '30vh'
+}
+
+.cardItem {
+    margin: auto;
+    width: 18rem;
+    height: auto;
+}
