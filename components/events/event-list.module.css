@@ -2,3 +2,7 @@
     margin: auto;
     justify-content: center;
 }
+
+.eventColumn {
+    margin-bottom: 3rem;
+}
