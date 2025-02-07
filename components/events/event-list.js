@@ -7,11 +7,11 @@ const EventList = ({ events }) => {
   return (
     <Row className={classes.eventList} xs={1} md={2}>
       {Array.from({ length: events.length }).map((_, idx) => (
-        <Col key={idx}>
+        <Col className={classes.eventColumn} key={idx}>
           <EventItem
             title={events[idx].title}
             description={events[idx].description}
-            imgSrc={events[idx].image}
+            imgSrc={events[idx].image || events[idx].thumbnail}
             link={events[idx].link}
           />
         </Col>
