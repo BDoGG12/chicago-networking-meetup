@@ -13,7 +13,7 @@ const FeaturedEvents = ({events}) => {
         )}
         {events[0] == "No events" && (
         <div className={classes.noEvents}>
-           <h3>No current events today! More coming soon!</h3>
+           <h3>No new events today!</h3>
         </div>         
         )}
     </section>
