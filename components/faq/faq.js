@@ -2,8 +2,8 @@ import { useState } from "react";
 
 const faqs = [
   { question: "What is this meetup about?", answer: "This meetup is for tech enthusiasts to network and share knowledge." },
-  { question: "Where is the event located?", answer: "The event is hosted at a local venue. Check our event page for details." },
-  { question: "Is there an entry fee?", answer: "No, this is a free event for the community." },
+  { question: "Where are the events located?", answer: "The events are located in Chicago, IL. Check our event listings for details." },
+  { question: "Is there an entry fee?", answer: "Depending on the hosts of the events, each event will have either free tickets or priced tickets." },
 ];
 
 export default function FAQ() {
