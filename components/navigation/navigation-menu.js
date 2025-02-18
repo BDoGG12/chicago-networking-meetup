@@ -33,13 +33,7 @@ const NavigationMenu = ({ children }) => {
       <Navbar bg="dark" data-bs-theme="dark">
         <Container>
           <Navbar.Brand href="/">Chicago Networking Meetup</Navbar.Brand>
-          <Form className='d-flex gap-2'>
-            <Form.Control type="text" placeholder="Search..." />
-            <Button variant="primary" type="submit">
-              Go
-            </Button>
-          </Form>
-          <Nav className="me-auto align-items-center">
+          <Nav className="ms-auto align-items-center">
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/events">Events</Nav.Link>
             {!isLoggedIn && (
