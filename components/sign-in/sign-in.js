@@ -11,13 +11,11 @@ const SignIn = () => {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();
-  const {setIsLoggedIn} = useContext(UserContext);
+  const { setIsLoggedIn } = useContext(UserContext);
 
   const handleUserName = (e) => {
     e.preventDefault();
-
-    const userNameVal = e.target.value;
-    setUserName(userNameVal)
+    setUserName(e.target.value);
   };
 
   const handlePassword = (e) => {
@@ -25,7 +23,12 @@ const SignIn = () => {
     setPassword(e.target.value);
   };
 
+  const handleForgotPassword = () => {
+    router.push("/forgot-password"); // Navigate to forgot password page
+  };
+
   const handleSubmit = (e) => {
+    e.preventDefault();
     const form = e.currentTarget;
 
     signInWithEmailAndPassword(auth, userName, password)
@@ -41,9 +44,10 @@ const SignIn = () => {
       .catch((error) => {
         console.log(error.message);
       });
-    e.preventDefault();
+
     setValidated(true);
   };
+
   return (
     <div>
       <h2>Sign In</h2>
@@ -70,6 +74,11 @@ const SignIn = () => {
             placeholder="Password"
           />
         </Form.Group>
+
+        <Button variant="link" onClick={handleForgotPassword}>
+          Forgot Password?
+        </Button>
+
         <Button variant="primary" type="submit">
           Submit
         </Button>
